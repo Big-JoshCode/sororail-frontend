@@ -4,6 +4,15 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    # Related packages must move together: a Next bump without its matching
+    # React and Stellar bumps fails on its own, so they arrive as one PR.
+    groups:
+      next-react-stellar:
+        patterns:
+          - "next"
+          - "react*"
+          - "@stellar/*"
+          - "vitest*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

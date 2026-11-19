@@ -27,9 +27,13 @@ frontend/
 
 | Piece | State |
 |---|---|
-| `packages/sdk` | Clients for all five contracts, typed error decoding, Freighter + keypair signers, amount helpers. 28 unit tests, 5 runnable examples, typechecks against `@stellar/stellar-sdk` 17.0.1. |
+| `packages/sdk` | Clients for all five contracts, typed error decoding, Freighter + keypair signers, amount helpers. unit tests in [`packages/sdk/test`](packages/sdk/test), 5 runnable examples, typechecks against `@stellar/stellar-sdk` 17.0.1. |
 | `apps/web` | Overview, payroll, streams, vesting and escrow screens. Builds and serves; typechecks. Wallet-connected flows have not been click-tested against a real wallet. |
 | `apps/docs` | Starlight site scaffolded: a landing page, Getting started (with the stream example included from `packages/sdk/examples`), and the amounts / decimals-trap concepts page. Reference, per-primitive concepts, TTL and security pages are not written yet. |
+
+> **Maintenance:** test counts are not written in this README, because they
+> go stale. Run `pnpm test` for the current numbers. When you change a status
+> row, check it against the test output and against the state of the code.
 
 **Verified end-to-end against live testnet.** `examples/stream-lifecycle.ts`
 created and withdrew from a real stream on 2026-09-07 — transactions
@@ -293,7 +297,8 @@ nobody is paid.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md). For how the packages, wallet and
+contracts interact, read [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## License
 

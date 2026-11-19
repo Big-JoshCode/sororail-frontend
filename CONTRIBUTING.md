@@ -14,6 +14,18 @@ pnpm typecheck
 
 Node ≥20, pnpm 10.
 
+### Root scripts
+
+Run these from the repo root. Each one fans out to every workspace package
+that defines the matching script, so you do not need to run them per package.
+
+| Script | Runs |
+|---|---|
+| `pnpm build` | `build` in `packages/sdk`, `apps/web` and `apps/docs` |
+| `pnpm test` | `test` in `packages/sdk` and `apps/web` |
+| `pnpm typecheck` | `typecheck` in `packages/sdk`, `apps/web` and `apps/docs` |
+| `pnpm lint` | `lint` in `packages/sdk` |
+
 ## What a complete PR looks like
 
 - [ ] Tests added
